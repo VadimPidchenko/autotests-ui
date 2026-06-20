@@ -56,7 +56,7 @@ class CreateCoursePage(BasePage):
     def check_disabled_create_course_button(self):
         expect(self.create_course_button).to_be_disabled()
 
-    def check_visible_preview_empty_view(self):
+    def check_visible_image_preview_empty_view(self):
         expect(self.preview_empty_view_icon).to_be_visible()
 
         expect(self.preview_empty_view_title).to_be_visible()
