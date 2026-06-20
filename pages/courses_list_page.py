@@ -1,11 +1,16 @@
 from playwright.sync_api import Page, expect
 
+from components.navigation.navbar_component import NavbarComponent
+from components.navigation.sidebar_component import SidebarComponent
 from pages.base_page import BasePage
 
 
 class CoursesListPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
+
+        self.navbar = NavbarComponent(page)
+        self.sidebar = SidebarComponent(page)
 
         # Заголовок и кнопка создания курса
         self.courses_title = page.get_by_test_id("courses-list-toolbar-title-text")
@@ -27,7 +32,6 @@ class CoursesListPage(BasePage):
         self.course_menu_button = page.get_by_test_id("course-view-menu-button")
         self.course_edit_menu_item = page.get_by_test_id("course-view-edit-menu-item")
         self.course_delete_menu_item = page.get_by_test_id("course-view-delete-menu-item")
-
 
     def check_visible_courses_title(self):
         expect(self.courses_title).to_be_visible()

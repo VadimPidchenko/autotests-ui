@@ -10,9 +10,9 @@ class SidebarComponent(BaseComponent):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.dashboard = SidebarListItemComponent("dashboard")
-        self.courses = SidebarListItemComponent("courses")
-        self.logout = SidebarListItemComponent("logout")
+        self.dashboard = SidebarListItemComponent(page, "dashboard")
+        self.courses = SidebarListItemComponent(page, "courses")
+        self.logout = SidebarListItemComponent(page, "logout")
 
     def check_visible(self):
         self.dashboard.check_visible("Dashboard")
@@ -24,7 +24,6 @@ class SidebarComponent(BaseComponent):
 
     def click_dashboard(self):
         self.dashboard.navigate(re.compile(r".*/#/courses"))
-
 
     def click_logout(self):
         self.dashboard.navigate(re.compile(r".*/#/auth/login"))
