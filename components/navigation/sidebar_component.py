@@ -10,6 +10,7 @@ class SidebarComponent(BaseComponent):
     def __init__(self, page: Page):
         super().__init__(page)
 
+        # Компоненты блока
         self.dashboard = SidebarListItemComponent(page, "dashboard")
         self.courses = SidebarListItemComponent(page, "courses")
         self.logout = SidebarListItemComponent(page, "logout")
