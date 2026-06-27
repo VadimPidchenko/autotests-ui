@@ -42,8 +42,7 @@ class ImageUploadWidgetComponent(BaseComponent):
         if is_uploaded_image:
             expect(self.preview_image).to_be_visible()
             expect(self.remove_button).to_be_visible()
-
-        if not is_uploaded_image:
+        else:
             self.preview_empty_view.check_visible(
                 title="No image selected",
                 description="Preview of selected image will be displayed here"
