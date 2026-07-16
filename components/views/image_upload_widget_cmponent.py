@@ -9,7 +9,7 @@ class ImageUploadWidgetComponent(BaseComponent):
         super().__init__(page)
 
         # Компонент страницы
-        self.preview_empty_view = EmptyViewComponent(page, "create-course-preview")
+        self.preview_empty_view = EmptyViewComponent(page, identifier)
 
         # Отображение загруженной обложки курса
         self.preview_image = page.get_by_test_id(f"{identifier}-image-upload-widget-preview-image")
